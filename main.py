@@ -25,5 +25,3 @@ def chat(req: ChatRequest):
         "reply": reply,
         "session_id": session_id
     }
-
-
