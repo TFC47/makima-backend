@@ -7,11 +7,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://itzmemakima.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 class ChatRequest(BaseModel):
     message: str
@@ -24,3 +27,4 @@ def chat(req: ChatRequest):
         "reply": reply,
         "session_id": session_id
     }
+
